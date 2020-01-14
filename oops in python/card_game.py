@@ -43,4 +43,11 @@ class Deck:
     
     def deal_hand(num):
         return self._deal(num)
+    
+    def __iter__(self):
+        return iter(self.cards)
 
+my_deck = Deck()
+
+for card in my_deck:
+    print(card)
