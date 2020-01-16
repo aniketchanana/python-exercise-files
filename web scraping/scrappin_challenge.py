@@ -12,7 +12,7 @@ soup = BeautifulSoup(response.text,"html.parser")
 pages = soup.select(".page")
 
 
-links = ['blog']
+links = ['/blog']
 for page in pages:
     try:
         links.append(page.find("a")["href"])
