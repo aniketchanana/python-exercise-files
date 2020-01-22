@@ -22,22 +22,45 @@
 #     print(day)
 
 
-def make_song(num):
-    count = num
-    for i in range(0,num+1):
-        if count == 1:
-            yield 'Only 1 bottle of kombucha left!'
-        elif count == 0:
-            yield 'No more kombucha!'
-        else :
-            yield str(count) + " bottles of kombucha on the wall"
-        count-=1
+# def make_song(num):
+#     count = num
+#     for i in range(0,num+1):
+#         if count == 1:
+#             yield 'Only 1 bottle of kombucha left!'
+#         elif count == 0:
+#             yield 'No more kombucha!'
+#         else :
+#             yield str(count) + " bottles of kombucha on the wall"
+#         count-=1
 
-gen  = make_song(5)
-print(next(gen))
-print(next(gen))
-print(next(gen))
-print(next(gen))
-print(next(gen))
+# gen  = make_song(5)
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+
+def is_prime(num):
+    i = 1
+    count = 0
+    while i <= num:
+        if num%i == 0:
+            count+=1
+        i+=1
+    return count == 2
+    
+# print(is_prime(3))
+    
+def next_prime():
+    num = 2
+    while True:
+        if is_prime(num):
+            yield num
+        num+=1
+
+gen = next_prime()
+
 print(next(gen))
 print(next(gen))
